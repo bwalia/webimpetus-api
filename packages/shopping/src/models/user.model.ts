@@ -26,6 +26,15 @@ export class User extends Entity {
   @property({
     type: 'string',
     id: true,
+    generated: true,
+    postgresql: {
+      columnName: 'id',
+      dataType: 'integer',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: 0,
+      nullable: 'NO',
+    },
   })
   id: string;
 

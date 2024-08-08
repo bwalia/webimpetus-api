@@ -13,7 +13,7 @@ export class ProductRepository extends DefaultCrudRepository<
   typeof Product.prototype.name,
   ProductRelations
 > {
-  constructor(@inject('datasources.mongo') dataSource: MongoDataSource) {
+  constructor(@inject('datasources.postgres') dataSource: MongoDataSource) {
     super(Product, dataSource);
   }
 }

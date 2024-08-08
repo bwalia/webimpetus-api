@@ -13,7 +13,18 @@ export class ShoppingCartItem extends Entity {
   /**
    * Product id
    */
-  @property({id: true})
+  @property({
+    id: true,
+    generated: true,
+    postgresql: {
+      columnName: 'id',
+      dataType: 'integer',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: 0,
+      nullable: 'NO',
+    },
+  })
   productId: string;
 
   /**

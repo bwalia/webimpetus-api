@@ -32,7 +32,7 @@ export class UserRepository extends DefaultCrudRepository<
   >;
 
   constructor(
-    @inject('datasources.mongo') dataSource: juggler.DataSource,
+    @inject('datasources.postgres') dataSource: juggler.DataSource,
     @repository(OrderRepository) protected orderRepository: OrderRepository,
     @repository.getter('UserCredentialsRepository')
     protected userCredentialsRepositoryGetter: Getter<UserCredentialsRepository>,

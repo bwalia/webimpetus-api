@@ -82,10 +82,14 @@ export class UserManagementService implements UserService<User, Credentials> {
       userWithPassword.password,
     );
     userWithPassword.password = password;
+    console.log({userWithPassword});
+    
     const user = await this.userRepository.create(
       _.omit(userWithPassword, 'password'),
     );
-    user.id = user.id.toString();
+    console.log({user});
+    
+    user.id = user.id;
     await this.userRepository.userCredentials(user.id).create({password});
     return user;
   }

@@ -11,6 +11,14 @@ export class Product extends Entity {
     type: 'string',
     id: true,
     generated: true,
+    postgresql: {
+      columnName: 'id',
+      dataType: 'integer',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: 0,
+      nullable: 'NO',
+    },
   })
   productId?: string;
 

@@ -10,7 +10,16 @@ export class UserCredentials extends Entity {
   @property({
     type: 'string',
     id: true,
+    generated: true,
     mongodb: {dataType: 'ObjectID'},
+    postgresql: {
+      columnName: 'id',
+      dataType: 'integer',
+      dataLength: null,
+      dataPrecision: null,
+      dataScale: 0,
+      nullable: 'NO',
+    },
   })
   id: string;
 
